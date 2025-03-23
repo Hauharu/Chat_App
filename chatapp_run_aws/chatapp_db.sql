@@ -2,7 +2,7 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
+-- Host: 0.0.0.0
 -- Generation Time: Mar 17, 2025 at 06:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
@@ -35,17 +35,6 @@ CREATE TABLE `messages` (
   `msg_img` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`msg_id`, `outgoing_msg_id`, `incoming_msg_id`, `msg`, `msg_img`) VALUES
-(1, '1706878143', '1065152921', 'hi', ''),
-(2, '1065152921', '1706878143', 'hi', ''),
-(3, '1706878143', '1065152921', 'hello', ''),
-(4, '1065152921', '1706878143', 'hello', '');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `user_form`
@@ -61,17 +50,6 @@ CREATE TABLE `user_form` (
   `status` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `user_form`
---
-
-INSERT INTO `user_form` (`id`, `user_id`, `name`, `email`, `password`, `img`, `status`) VALUES
-(1, '1065152921', 'hau', 'trunghauu71@gmail.com', '202cb962ac59075b964b07152d234b70', 'default-avatar.png', 'Active Now'),
-(2, '1706878143', 'bao', 'trunghauu71@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'default-avatar.png', 'Active Now');
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `messages`
@@ -100,6 +78,12 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `user_form`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+-- Cho phép NULL cho msg_img
+ALTER TABLE messages MODIFY msg_img VARCHAR(255) NULL;
+
+-- Cho phép NULL cho msg
+ALTER TABLE messages MODIFY msg TEXT NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

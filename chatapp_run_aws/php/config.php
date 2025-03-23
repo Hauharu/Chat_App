@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-define('DB_SERVER', '52.86.108.80');
+define('DB_SERVER', '34.230.189.100');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'Hau15102004@');
 define('DB_NAME', 'chatapp_db');
