@@ -30,11 +30,10 @@ CREATE TABLE `messages` (
   `msg_id` int(11) NOT NULL,
   `outgoing_msg_id` varchar(300) NOT NULL,
   `incoming_msg_id` varchar(300) NOT NULL,
-  `msg` varchar(2000) NOT NULL,
-  `msg_img` varchar(500) NOT NULL
+  `msg` varchar(2000)  NULL,
+  `msg_img` varchar(500)  NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `user_form`
@@ -50,9 +49,6 @@ CREATE TABLE `user_form` (
   `status` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `messages`
@@ -66,9 +62,6 @@ ALTER TABLE `messages`
 ALTER TABLE `user_form`
   ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -81,15 +74,8 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `user_form`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
--- ✅ Cho phép NULL cho msg_img
-ALTER TABLE messages MODIFY msg_img VARCHAR(255) NULL;
-
--- ✅ Cho phép NULL cho msg
-ALTER TABLE messages MODIFY msg TEXT NULL;
-
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
